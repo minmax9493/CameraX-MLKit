@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/permissionsFragment">
+
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="app.pivo.android.mlkit_camerax.CameraFragment"
+        android:label="Camera"
+        tools:layout="@layout/fragment_camera">
+
+        <action
+            android:id="@+id/action_camera_to_permissions"
+            app:destination="@id/permissionsFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/cameraFragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/permissionsFragment"
+        android:name="app.pivo.android.mlkit_camerax.PermissionsFragment"
+        android:label="Permissions">
+
+        <action
+            android:id="@+id/action_permissions_to_camera"
+            app:destination="@id/cameraFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/permissionsFragment"/>
+    </fragment>
+</navigation>
